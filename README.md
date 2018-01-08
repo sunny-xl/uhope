@@ -18,11 +18,15 @@
 2. plist文件和ipa文件名字必须相同
 3. 访问plist文件时需要直接以文本形式读取，因此需要设定web服务器 MIME 类型
     - 对于 OS X Server，将以下 MIME 类型添加到 Web 服务的“MIME Types”（MIME 类型）设置：
-        application/octet-stream ipa
-        text/xml plist
+```
+    application/octet-stream ipa
+    text/xml plist
+```
     - 对于 IIS，使用 IIS Manager 在服务器的“属性”页面中添加 MIME 类型：
-        .ipa application/octet-stream
-        .plist text/xml
+```
+    .ipa application/octet-stream
+    .plist text/xml
+```
 
 4. plist文件里面具体内容填写说明
 
@@ -31,11 +35,15 @@
     full-size-image：用来在 iTunes 中表示应用程序的512 x 512像素PNG图像。不可缺少  <br />
     bundle-identifier：您应用程序的包标识符，即appid ,与 Xcode 项目中指定的完全一样。  <br />
     bundle-version: 您应用程序的包版本，在 Xcode 项目中指定。  <br />
-    title: 下载和安装过程中显示的应用程序的名称。  <br />
-    *还可以根据需要自定义字段*  <br />
+    title: 下载和安装过程中显示的应用程序的名称。  <br />  <br />
+
+    *还可以根据需要自定义字段*
     如我根据项目需要，添加了每次版本更新的更新提示内容  <br />
-    <key>updateMsg</key>  <br />
-	<string>1.1.0版本发布了，优化了用户体验</string>  <br />
+
+    ```
+    <key>updateMsg</key>
+	<string>1.1.0版本发布了，优化了用户体验</string>
+    ```
 
 ### ipa文件
 项目安装包，用xcode打包，选择类型时要选择企业版
